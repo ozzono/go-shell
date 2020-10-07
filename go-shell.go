@@ -8,9 +8,6 @@ import (
 
 //Cmd executes the given string as shell command
 func Cmd(arg string) string {
-	if loglvl {
-		log.Printf("shell: %v", arg)
-	}
 	args := strings.Split(arg, " ")
 	out, err := exec.Command(args[0], args[1:]...).CombinedOutput()
 	if err != nil {
