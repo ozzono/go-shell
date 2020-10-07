@@ -6,8 +6,6 @@ import (
 	"strings"
 )
 
-var loglvl = false
-
 //Cmd executes the given string as shell command
 func Cmd(arg string) string {
 	if loglvl {
@@ -20,9 +18,4 @@ func Cmd(arg string) string {
 		return err.Error()
 	}
 	return string(out)
-}
-
-//SwitchLogLvl switches the shell log lvl
-func SwitchLogLvl() {
-	loglvl = !loglvl
 }
