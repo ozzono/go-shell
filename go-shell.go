@@ -6,9 +6,13 @@ import (
 	"strings"
 )
 
+var loglvl = false
+
 //Cmd executes the given string as shell command
 func Cmd(arg string) string {
-	log.Printf("shell: %v", arg)
+	if loglvl {
+		log.Printf("shell: %v", arg)
+	}
 	args := strings.Split(arg, " ")
 	out, err := exec.Command(args[0], args[1:]...).CombinedOutput()
 	if err != nil {
@@ -16,4 +20,9 @@ func Cmd(arg string) string {
 		return err.Error()
 	}
 	return string(out)
+}
+
+//SwitchLogLvl switches the shell log lvl
+func SwitchLogLvl() {
+	loglvl = !loglvl
 }
