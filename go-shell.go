@@ -6,8 +6,8 @@ import (
 	"strings"
 )
 
-//Shell executes the given string as shell command
-func Shell(arg string) string {
+//Cmd executes the given string as shell command
+func Cmd(arg string) string {
 	log.Printf("shell: %v", arg)
 	args := strings.Split(arg, " ")
 	out, err := exec.Command(args[0], args[1:]...).CombinedOutput()
