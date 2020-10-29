@@ -7,8 +7,8 @@ import (
 
 // CMD basic structure with output and pid
 type CMD struct {
-	output string
-	pid    int
+	Output string
+	Pid    int
 }
 
 //Cmd executes the given string as shell command
@@ -16,5 +16,5 @@ func Cmd(arg string) (CMD, error) {
 	args := strings.Split(arg, " ")
 	cmd := exec.Command(args[0], args[1:]...)
 	out, err := cmd.CombinedOutput()
-	return CMD{output: string(out), pid: cmd.Process.Pid}, err
+	return CMD{Output: string(out), Pid: cmd.Process.Pid}, err
 }

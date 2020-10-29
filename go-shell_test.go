@@ -12,7 +12,7 @@ func TestCMD(t *testing.T) {
 		return
 	}
 	cmdRows := []string{}
-	for _, item := range strings.Split(cleanString(cmd.output), "\n") {
+	for _, item := range strings.Split(cleanString(cmd.Output), "\n") {
 		if len(item) > 0 {
 			cmdRows = append(cmdRows, item)
 		}
