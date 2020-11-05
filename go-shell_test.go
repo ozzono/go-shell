@@ -88,7 +88,7 @@ func testLooseCmd2(t *testing.T) error {
 	if err != nil {
 		return err
 	}
-	time.Sleep(10 & time.Second)
+	time.Sleep(10 * time.Second)
 	if !find("emulator", "-avd", deviceName) {
 		return fmt.Errorf("emulator not found; command pid: %d", pid)
 	}
